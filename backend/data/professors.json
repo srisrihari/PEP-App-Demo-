@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "name": "Dr. Robert Johnson",
+    "email": "robert.johnson@university.edu",
+    "department": "Physical Education",
+    "designation": "Associate Professor",
+    "courses": ["PEP101", "PEP201"]
+  },
+  {
+    "id": "2",
+    "name": "Dr. Sarah Williams",
+    "email": "sarah.williams@university.edu",
+    "department": "Physical Education",
+    "designation": "Assistant Professor",
+    "courses": ["PEP102", "PEP202"]
+  }
+]

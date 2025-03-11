@@ -1,0 +1,104 @@
+[
+  {
+    "id": "1",
+    "name": "John Doe",
+    "email": "john.doe@university.edu",
+    "roll_number": "S2023001",
+    "current_term": {
+      "total_classes": 5,
+      "attended_classes": 2,
+      "remaining_classes": 3,
+      "performance_metrics": {
+        "fitness_test_score": 85,
+        "participation": "Average",
+        "discipline": "Good"
+      },
+      "feedback": "John is performing well but needs to improve attendance."
+    },
+    "previous_terms": [
+      {
+        "term": "Fall 2023",
+        "grade": "A",
+        "performance_metrics": {
+          "fitness_test_score": 90,
+          "participation": "Excellent",
+          "discipline": "Good"
+        },
+        "feedback": "Excellent performance throughout the term."
+      }
+    ],
+    "attendance": [
+      {
+        "date": "2024-01-10",
+        "status": "present",
+        "professorId": "1"
+      },
+      {
+        "date": "2024-01-12",
+        "status": "present",
+        "professorId": "1"
+      },
+      {
+        "date": "2024-01-15",
+        "status": "absent",
+        "professorId": "1"
+      },
+      {
+        "date": "2025-03-11",
+        "status": "absent",
+        "professorId": "1"
+      },
+      {
+        "date": "2025-03-09",
+        "status": "absent",
+        "professorId": "1"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Jane Smith",
+    "email": "jane.smith@university.edu",
+    "roll_number": "S2023002",
+    "current_term": {
+      "total_classes": 15,
+      "attended_classes": 14,
+      "remaining_classes": 1,
+      "performance_metrics": {
+        "fitness_test_score": 92,
+        "participation": "Excellent",
+        "discipline": "Excellent"
+      },
+      "feedback": "Jane is an outstanding student with excellent attendance and participation."
+    },
+    "previous_terms": [
+      {
+        "term": "Fall 2023",
+        "grade": "A+",
+        "performance_metrics": {
+          "fitness_test_score": 95,
+          "participation": "Excellent",
+          "discipline": "Excellent"
+        },
+        "feedback": "Exceptional performance in all aspects."
+      }
+    ],
+    "attendance": [
+      {
+        "date": "2024-01-10",
+        "status": "present",
+        "professorId": "1"
+      },
+      {
+        "date": "2024-01-12",
+        "status": "present",
+        "professorId": "1"
+      },
+      {
+        "date": "2024-01-15",
+        "status": "present",
+        "professorId": "1"
+      }
+    ]
+  }
+]
