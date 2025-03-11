@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [role, setRole] = useState('student');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -19,12 +20,15 @@ const Login = ({ onLogin }) => {
       const endpoint = role === 'student' ? '/api/students' : '/api/professors';
       const response = await axios.get(endpoint);
       
-      const user = response.data.find(u => u.email.toLowerCase() === email.toLowerCase());
+      const user = response.data.find(u => 
+        u.email.toLowerCase() === email.toLowerCase() && 
+        u.password === password
+      );
       
       if (user) {
         onLogin({ ...user, role });
       } else {
-        setError('User not found. Please check your email and role.');
+        setError('Invalid email, password, or role. Please try again.');
       }
     } catch (err) {
       setError('An error occurred. Please try again.');
@@ -59,6 +63,17 @@ const Login = ({ onLogin }) => {
             </Form.Group>
 
             <Form.Group className="mb-3">
+              <Form.Label>Password</Form.Label>
+              <Form.Control 
+                type="password" 
+                placeholder="Enter your password" 
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
               <Form.Label>Role</Form.Label>
               <Form.Select 
                 value={role}
@@ -77,12 +92,12 @@ const Login = ({ onLogin }) => {
           </Form>
         </Card.Body>
         <Card.Footer className="text-center text-muted">
-          <small>For demo purposes: Use emails from the JSON data files</small>
+          <small>For demo purposes: Use the following credentials</small>
           <div>
-            <small>Student: john.doe@university.edu</small>
+            <small>Student: srihari@vijaybhoomi.edu.in / 12345678</small>
           </div>
           <div>
-            <small>Professor: robert.johnson@university.edu</small>
+            <small>Professor: rinu.babu@vijaybhoomi.edu.in / 12345678</small>
           </div>
         </Card.Footer>
       </Card>

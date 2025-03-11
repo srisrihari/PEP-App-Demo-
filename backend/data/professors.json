@@ -1,16 +1,18 @@
 [
   {
     "id": "1",
-    "name": "Dr. Robert Johnson",
-    "email": "robert.johnson@university.edu",
+    "name": "Rinu Babu",
+    "email": "rinu.babu@vijaybhoomi.edu.in",
+    "password": "12345678",
     "department": "Physical Education",
     "designation": "Associate Professor",
     "courses": ["PEP101", "PEP201"]
   },
   {
     "id": "2",
-    "name": "Dr. Sarah Williams",
-    "email": "sarah.williams@university.edu",
+    "name": "Sandeep Thapa",
+    "email": "sandeep.thapa@vijaybhoomi.edu.in",
+    "password": "12345678",
     "department": "Physical Education",
     "designation": "Assistant Professor",
     "courses": ["PEP102", "PEP202"]

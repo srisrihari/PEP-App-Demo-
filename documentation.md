@@ -2,13 +2,77 @@
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [System Architecture](#system-architecture)
-3. [Data Structure](#data-structure)
-4. [API Documentation](#api-documentation)
-5. [Frontend Components](#frontend-components)
-6. [Authentication Flow](#authentication-flow)
-7. [High-Level Diagram](#high-level-diagram)
+1. [Usage Instructions](#usage-instructions)
+2. [Introduction](#introduction)
+3. [System Architecture](#system-architecture)
+4. [Data Structure](#data-structure)
+5. [API Documentation](#api-documentation)
+6. [Frontend Components](#frontend-components)
+7. [Authentication Flow](#authentication-flow)
+8. [High-Level Diagram](#high-level-diagram)
+
+## Usage Instructions
+
+### Getting Started
+
+The University Physical Education Program (PEP) Application provides separate interfaces for students and professors to manage physical education activities. Follow these instructions to use the application effectively.
+
+### Login
+
+1. Access the application through your web browser
+2. On the login page, enter your university email and password
+3. Select your role (Student or Professor) from the dropdown menu
+4. Click the "Login" button
+
+**Demo Credentials:**
+- Student: srihari@vijaybhoomi.edu.in / 12345678
+- Professor: rinu.babu@vijaybhoomi.edu.in / 12345678
+
+### For Students
+
+After logging in as a student, you will be directed to the Student Dashboard where you can:
+
+1. **View Current Term Overview**
+   - See total classes, attended classes, and remaining classes
+   - Check your attendance rate visualized as a progress bar
+
+2. **Check Performance Metrics**
+   - View your fitness test scores
+   - See participation and discipline ratings
+
+3. **Read Professor Feedback**
+   - Access feedback provided by your professor
+
+4. **Review Attendance Records**
+   - See a chronological list of your attendance status for each class
+
+5. **Access Previous Terms**
+   - View historical performance data and grades from past terms
+
+### For Professors
+
+After logging in as a professor, you will be directed to the Professor Dashboard where you can:
+
+1. **Select a Student**
+   - Choose a student from the dropdown menu to view or update their information
+
+2. **Record Attendance**
+   - Select a date
+   - Mark a student as present or absent
+   - Submit the attendance record
+
+3. **Update Performance Metrics**
+   - Enter fitness test scores
+   - Rate student participation and discipline
+   - Save the performance metrics
+
+4. **Provide Feedback**
+   - Enter constructive feedback for the student
+   - Submit the feedback
+
+5. **Complete Academic Terms**
+   - Finalize a term with a grade
+   - Move current term data to previous terms history
 
 ## Introduction
 
@@ -40,9 +104,10 @@ Students are stored in `students.json` with the following structure:
 ```json
 {
   "id": "1",
-  "name": "John Doe",
-  "email": "john.doe@university.edu",
-  "roll_number": "S2023001",
+  "name": "Srihari S K",
+  "email": "srihari@vijaybhoomi.edu.in",
+  "password": "12345678",
+  "roll_number": "2022OCTVUGP0000",
   "current_term": {
     "total_classes": 5,
     "attended_classes": 2,
@@ -52,11 +117,11 @@ Students are stored in `students.json` with the following structure:
       "participation": "Average",
       "discipline": "Good"
     },
-    "feedback": "John is performing well but needs to improve attendance."
+    "feedback": "Srihari is performing well but needs to improve attendance."
   },
   "previous_terms": [
     {
-      "term": "Fall 2023",
+      "term": "Independence 2024",
       "grade": "A",
       "performance_metrics": {
         "fitness_test_score": 90,
@@ -83,8 +148,9 @@ Professors are stored in `professors.json` with the following structure:
 ```json
 {
   "id": "1",
-  "name": "Dr. Robert Johnson",
-  "email": "robert.johnson@university.edu",
+  "name": "Rinu Babu",
+  "email": "rinu.babu@vijaybhoomi.edu.in",
+  "password": "12345678",
   "department": "Physical Education",
   "designation": "Associate Professor",
   "courses": ["PEP101", "PEP201"]
@@ -254,10 +320,10 @@ sequenceDiagram
     participant Backend
     participant JSONStorage
     
-    User->>Frontend: Enter email & select role
+    User->>Frontend: Enter email, password & select role
     Frontend->>Backend: Send authentication request
-    Backend->>JSONStorage: Search for user
-    JSONStorage-->>Backend: Return user data
+    Backend->>JSONStorage: Search for user with matching credentials
+    JSONStorage-->>Backend: Return user data if credentials match
     Backend-->>Frontend: Return user data
     Frontend->>Frontend: Store user in state
     Frontend->>User: Redirect to dashboard
@@ -318,6 +384,7 @@ erDiagram
         string id
         string name
         string email
+        string password
         string roll_number
     }
     CURRENT_TERM {
@@ -345,6 +412,7 @@ erDiagram
         string id
         string name
         string email
+        string password
         string department
         string designation
         array courses
