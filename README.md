@@ -1,5 +1,5 @@
 # PEP-App-Demo-
-# University Physical Education Program (PEP) Application Documentation
+# University Personality Enhancement Program (PEP) Application Documentation
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@
 
 ### Getting Started
 
-The University Physical Education Program (PEP) Application provides separate interfaces for students and professors to manage physical education activities. Follow these instructions to use the application effectively.
+The University Personality Enhancement Program (PEP) Application provides separate interfaces for students and professors to manage physical education activities. Follow these instructions to use the application effectively.
 
 ### Login
 
@@ -77,7 +77,7 @@ After logging in as a professor, you will be directed to the Professor Dashboard
 
 ## Introduction
 
-The University Physical Education Program (PEP) Application is a web-based system designed to manage physical education courses at a university. It provides functionality for professors to track student attendance, record performance metrics, provide feedback, and complete academic terms. Students can view their attendance records, performance metrics, and feedback from professors.
+The University Personality Enhancement Program (PEP) Application is a web-based system designed to manage physical education courses at a university. It provides functionality for professors to track student attendance, record performance metrics, provide feedback, and complete academic terms. Students can view their attendance records, performance metrics, and feedback from professors.
 
 ## System Architecture
 
@@ -427,4 +427,4 @@ erDiagram
     PROFESSORS ||--o{ ATTENDANCE : records
 ```
 
-This documentation provides a comprehensive overview of the University Physical Education Program (PEP) Application, including its architecture, data structures, API endpoints, and component relationships. The high-level diagrams illustrate the system's structure and data flow, making it easier to understand how the different parts of the application interact with each other.
+This documentation provides a comprehensive overview of the University Personality Enhancement Program (PEP) Application, including its architecture, data structures, API endpoints, and component relationships. The high-level diagrams illustrate the system's structure and data flow, making it easier to understand how the different parts of the application interact with each other.
